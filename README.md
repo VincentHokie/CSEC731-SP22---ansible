@@ -1,10 +1,8 @@
 # Ansible For Project C
 
-A webserver written using python sockets with functionality including HTTP request parsing, request processing and HTTP response return. It supports some of the more comment HTTP methods. It comes with both HTTP and HTTPS support. In addition we are able to process PHP scripts through php-cgi i.e. we can return a processed .php webpage and process POST requests through a login form as an example.
+A couple of roles created to set up a system with required services to allow running a tls termination + modsecurity proxy servers to a DVWA container.
 
 ## Getting Started
-
-The script is developed using Python 3. **No external python depenencies need to be installed.**
 
 ### Prerequisites
 
