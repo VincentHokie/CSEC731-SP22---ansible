@@ -15,11 +15,10 @@ To run this project the following prerequisites are required installed and avail
 
   `git clone git@github.com:VincentHokie/CSEC731-SP22---ansible.git`
 
-- Navigate to the root directory of the project and run the command below to start the webserver
 
-  `GITHUB_USER='{your-github-user}' GITHUB_TOKEN='{your-github-token}' ansible-playbook -i inventory project-c.yml`
+### Setup and Run for Remote Deployment
 
-Your github token should have the following scopes (these are the permissions on my token)
+- Generate a github token that should have the following scopes (these are the permissions on my token). This will be useful later on.
 
 ```
 - repo
@@ -27,6 +26,20 @@ Your github token should have the following scopes (these are the permissions on
 - user
 - admin:gpg_key
 ```
+
+- Create a VM either locally or in a cloud provider of your choice. As you can probably tell I created my VM in AWS (based on the inventory file).
+
+- Once the VM is ready, update the [inventory](./inventory) file by either creating a new group or using the already-existing aws group. If you create a new group, update the [project-c.yml](./project-c.yml) and replace aws with the group you added to the inventory file
+
+- Add your IP address (public IP if using the cloud, 127.0.0.1 if using a VM on your local environment)
+
+- Add variables required to connect to your host e.g. ansible_port, ansible_user, ansible_ssh_private_key_file
+
+- Once you are set up with the above information. Navigate to the root directory of the project and run the command below to start the webserver
+
+  `GITHUB_USER='{your-github-user}' GITHUB_TOKEN='{your-github-token}' ansible-playbook -i inventory project-c.yml`
+
+
 
 ### Assumptions
 
