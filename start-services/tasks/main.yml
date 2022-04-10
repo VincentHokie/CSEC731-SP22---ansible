@@ -1,0 +1,12 @@
+---
+- name: Clone Vincent's project
+  git:
+    repo: https://{{ lookup('env','GITHUB_USER') }}:{{ lookup('env','GITHUB_TOKEN') }}@github.com/CSEC731-SP22/project-c---hardening-a-web-application-VincentHokie.git
+    dest: /home/ubuntu/VincentHokie--project-c
+    clone: yes
+    update: yes
+
+- name: Run services
+  shell: |
+    cd /home/ubuntu/VincentHokie--project-c
+    docker-compose up --build -d
