@@ -33,12 +33,13 @@ To run this project the following prerequisites are required installed and avail
 
 - Add your IP address (public IP if using the cloud, 127.0.0.1 if using a VM on your local environment)
 
-- Add variables required to connect to your host e.g. ansible_port, ansible_user, ansible_ssh_private_key_file
+- Add variables required to connect to your host e.g. ansible_port, ansible_user, ansible_ssh_private_key_file in the inventory file/ using a more secure technique e.g. [ansible-vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html).
 
-- Once you are set up with the above information. Navigate to the root directory of the project and run the command below to start the webserver
+- Once you are set up with the above information. Navigate to the root directory of the project and run the command below to set up the VM.
 
   `GITHUB_USER='{your-github-user}' GITHUB_TOKEN='{your-github-token}' ansible-playbook -i inventory project-c.yml`
 
+- Once this has run to the end, visit port 8080 and/ or 443 of your VM to reach the DVWA container through the modsecurity and tls-termination proxies respectively.
 
 
 ### Assumptions
